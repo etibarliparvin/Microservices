@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2022.06.04
+      author: etibarli
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: operator_id
+            baseTableName: tax
+            constraintName: fk_tax_operator
+            referencedColumnNames: id
+            referencedTableName: operator
+        - addForeignKeyConstraint:
+            baseColumnNames: operator_id
+            baseTableName: agent
+            constraintName: fk_agent_operator
+            referencedColumnNames: id
+            referencedTableName: operator
+        - addForeignKeyConstraint:
+            baseColumnNames: agent_id
+            baseTableName: cashier
+            constraintName: fk_cashier_agent
+            referencedColumnNames: id
+            referencedTableName: agent

@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2022.06.04
+      author: etibarli
+      changes:
+        - createTable:
+            tableName: tax
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: tax_pk
+                    nullable: false
+              - column:
+                  name: type
+                  type: varchar(250)
+              - column:
+                  name: value
+                  type: numeric
+              - column:
+                  name: status
+                  type: boolean
+              - column:
+                  name: operator_id
+                  type: bigint

@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2022.06.04
+      author: etibarli
+      changes:
+        - createTable:
+            tableName: ticket
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: ticket_pk
+                    nullable: false
+              - column:
+                  name: barcode
+                  type: varchar(250)
+              - column:
+                  name: cashier_code
+                  type: varchar(250)
+              - column:
+                  name: bet_type
+                  type: varchar(250)
+              - column:
+                  name: stake_amount
+                  type: numeric
+              - column:
+                  name: total_win_amount
+                  type: numeric
+              - column:
+                  name: total_pay_amount
+                  type: numeric
+              - column:
+                  name: bet_time
+                  type: timestamp
+              - column:
+                  name: ticket_status
+                  type: varchar(250)
+              - column:
+                  name: odd
+                  type: numeric

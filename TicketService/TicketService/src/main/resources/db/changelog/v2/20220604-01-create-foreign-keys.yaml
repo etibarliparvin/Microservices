@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2022.06.04
+      author: etibarli
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ticket_id
+            baseTableName: ticket_betline
+            constraintName: fk_ticket_betline_ticket
+            referencedColumnNames: id
+            referencedTableName: ticket
