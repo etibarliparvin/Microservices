@@ -1,5 +1,6 @@
 package az.topaz.backofficeservice.service.businessService.operatorBusinessService;
 
+import az.topaz.backofficeservice.dto.common.CommonResponse;
 import az.topaz.backofficeservice.dto.request.OperatorRequest;
 import az.topaz.backofficeservice.dto.response.OperatorResponse;
 import az.topaz.backofficeservice.mapper.businessMapper.OperatorResponseMapper;
@@ -18,27 +19,37 @@ public class OperatorBusinessServiceImpl implements OperatorBusinessService {
     private final OperatorJooqService operatorJooqService;
 
     @Override
-    public OperatorResponse create(OperatorRequest request) {
-        return operatorResponseMapper.toResponse(operatorJooqService.create(request));
+    public CommonResponse create(OperatorRequest request) {
+        CommonResponse response = new CommonResponse();
+        response.setItem(operatorResponseMapper.toResponse(operatorJooqService.create(request)));
+        return response;
     }
 
     @Override
-    public OperatorResponse findById(Long id) {
-        return operatorResponseMapper.toResponse(operatorJooqService.findById(id));
+    public CommonResponse findById(Long id) {
+        CommonResponse response = new CommonResponse();
+        response.setItem(operatorResponseMapper.toResponse(operatorJooqService.findById(id)));
+        return response;
     }
 
     @Override
-    public List<OperatorResponse> findAll() {
-        return operatorResponseMapper.toResponseList(operatorJooqService.findAll());
+    public CommonResponse findAll() {
+        CommonResponse response = new CommonResponse();
+        response.setItem(operatorResponseMapper.toResponseList(operatorJooqService.findAll()));
+        return response;
     }
 
     @Override
-    public OperatorResponse update(Long id, OperatorRequest request) {
-        return operatorResponseMapper.toResponse(operatorJooqService.update(id, request));
+    public CommonResponse update(Long id, OperatorRequest request) {
+        CommonResponse response = new CommonResponse();
+        response.setItem(operatorResponseMapper.toResponse(operatorJooqService.update(id, request)));
+        return response;
     }
 
     @Override
-    public Long getCountOfCashiers(Long id) {
-        return operatorJooqService.getCountOfCashiers(id);
+    public CommonResponse getCountOfCashiers(Long id) {
+        CommonResponse response = new CommonResponse();
+        response.setItem(operatorJooqService.getCountOfCashiers(id));
+        return response;
     }
 }

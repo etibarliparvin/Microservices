@@ -6,6 +6,7 @@ import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -21,4 +22,5 @@ public class TicketResponse {
     LocalDateTime betTime;
     String ticketStatus;
     BigDecimal odd;
+
 }

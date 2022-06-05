@@ -1,9 +1,7 @@
 package az.topaz.ticketservice.service.businessService.ticketBetlineService;
 
 import az.topaz.ticketservice.dto.request.TicketBetlineRequest;
-import az.topaz.ticketservice.dto.request.TicketRequest;
 import az.topaz.ticketservice.dto.response.TicketBetlineResponse;
-import az.topaz.ticketservice.dto.response.TicketResponse;
 
 import java.util.List;
 
@@ -14,6 +12,8 @@ public interface TicketBetlineBusinessService {
     TicketBetlineResponse findById(Long id);
 
     List<TicketBetlineResponse> findAll();
+
+    List<TicketBetlineResponse> findAllByTicketId(Long id);
 
     TicketBetlineResponse update(Long id, TicketBetlineRequest request);
 }

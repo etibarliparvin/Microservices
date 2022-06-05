@@ -46,4 +46,12 @@ public class TicketBetlineRepositoryImpl implements TicketBetlineRepository<Tick
                 .returning()
                 .fetchOneInto(TicketBetlineRecord.class);
     }
+
+    @Override
+    public List<TicketBetlineRecord> getAllBetlinesWithTicketId(Long id) {
+        return context.select()
+                .from(TICKET_BETLINE)
+                .where(TICKET_BETLINE.TICKET_ID.eq(id))
+                .fetchInto(TicketBetlineRecord.class);
+    }
 }

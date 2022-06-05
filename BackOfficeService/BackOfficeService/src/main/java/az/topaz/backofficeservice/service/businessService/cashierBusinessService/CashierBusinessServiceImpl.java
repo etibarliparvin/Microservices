@@ -1,5 +1,6 @@
 package az.topaz.backofficeservice.service.businessService.cashierBusinessService;
 
+import az.topaz.backofficeservice.dto.common.CommonResponse;
 import az.topaz.backofficeservice.dto.request.CashierRequest;
 import az.topaz.backofficeservice.dto.response.CashierResponse;
 import az.topaz.backofficeservice.mapper.businessMapper.CashierResponseMapper;
@@ -17,22 +18,30 @@ public class CashierBusinessServiceImpl implements CashierBusinessService {
     private final CashierJooqService cashierJooqService;
 
     @Override
-    public CashierResponse create(CashierRequest request) {
-        return cashierResponseMapper.toResponse(cashierJooqService.create(request));
+    public CommonResponse create(CashierRequest request) {
+        CommonResponse response = new CommonResponse();
+        response.setItem(cashierResponseMapper.toResponse(cashierJooqService.create(request)));
+        return response;
     }
 
     @Override
-    public CashierResponse findById(Long id) {
-        return cashierResponseMapper.toResponse(cashierJooqService.findById(id));
+    public CommonResponse findById(Long id) {
+        CommonResponse response = new CommonResponse();
+        response.setItem(cashierResponseMapper.toResponse(cashierJooqService.findById(id)));
+        return response;
     }
 
     @Override
-    public List<CashierResponse> findAll() {
-        return cashierResponseMapper.toResponseList(cashierJooqService.findAll());
+    public CommonResponse findAll() {
+        CommonResponse response = new CommonResponse();
+        response.setItem(cashierResponseMapper.toResponseList(cashierJooqService.findAll()));
+        return response;
     }
 
     @Override
-    public CashierResponse update(Long id, CashierRequest request) {
-        return cashierResponseMapper.toResponse(cashierJooqService.update(id, request));
+    public CommonResponse update(Long id, CashierRequest request) {
+        CommonResponse response = new CommonResponse();
+        response.setItem(cashierResponseMapper.toResponse(cashierJooqService.update(id, request)));
+        return response;
     }
 }

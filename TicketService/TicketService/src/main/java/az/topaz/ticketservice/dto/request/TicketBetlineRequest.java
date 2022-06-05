@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class TicketBetlineRequest {
 
-    Long ticketId;
+    Long ticketId;// lazim deyil
     String event;
     String sportName;
     String languageName;

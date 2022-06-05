@@ -47,6 +47,7 @@ public class OperatorRepositoryImpl implements OperatorRepository<OperatorRecord
                 .fetchOneInto(OperatorRecord.class);
     }
 
+    // TODO cashier table-da opertor_id column olmadiqda nece uygunlawdirmaq olar?
     @Override
     public Long countOfCashiers(Long id) {
         return context.selectCount()

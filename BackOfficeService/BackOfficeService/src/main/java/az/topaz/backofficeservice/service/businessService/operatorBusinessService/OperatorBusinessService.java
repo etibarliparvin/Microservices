@@ -1,5 +1,6 @@
 package az.topaz.backofficeservice.service.businessService.operatorBusinessService;
 
+import az.topaz.backofficeservice.dto.common.CommonResponse;
 import az.topaz.backofficeservice.dto.request.OperatorRequest;
 import az.topaz.backofficeservice.dto.response.OperatorResponse;
 
@@ -7,13 +8,13 @@ import java.util.List;
 
 public interface OperatorBusinessService {
 
-    OperatorResponse create(OperatorRequest request);
+    CommonResponse create(OperatorRequest request);
 
-    OperatorResponse findById(Long id);
+    CommonResponse findById(Long id);
 
-    List<OperatorResponse> findAll();
+    CommonResponse findAll();
 
-    OperatorResponse update(Long id, OperatorRequest request);
+    CommonResponse update(Long id, OperatorRequest request);
 
-    Long getCountOfCashiers(Long id);
+    CommonResponse getCountOfCashiers(Long id);
 }

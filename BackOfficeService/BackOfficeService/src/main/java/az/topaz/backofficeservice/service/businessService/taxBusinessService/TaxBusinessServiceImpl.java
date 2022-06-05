@@ -1,5 +1,6 @@
 package az.topaz.backofficeservice.service.businessService.taxBusinessService;
 
+import az.topaz.backofficeservice.dto.common.CommonResponse;
 import az.topaz.backofficeservice.dto.request.TaxRequest;
 import az.topaz.backofficeservice.dto.response.TaxResponse;
 import az.topaz.backofficeservice.mapper.businessMapper.TaxResponseMapper;
@@ -17,22 +18,30 @@ public class TaxBusinessServiceImpl implements TaxBusinessService {
     private final TaxJooqService taxJooqService;
 
     @Override
-    public TaxResponse create(TaxRequest request) {
-        return taxResponseMapper.toResponse(taxJooqService.create(request));
+    public CommonResponse create(TaxRequest request) {
+        CommonResponse response = new CommonResponse();
+        response.setItem(taxResponseMapper.toResponse(taxJooqService.create(request)));
+        return response;
     }
 
     @Override
-    public TaxResponse findById(Long id) {
-        return taxResponseMapper.toResponse(taxJooqService.findById(id));
+    public CommonResponse findById(Long id) {
+        CommonResponse response = new CommonResponse();
+        response.setItem(taxResponseMapper.toResponse(taxJooqService.findById(id)));
+        return response;
     }
 
     @Override
-    public List<TaxResponse> findAll() {
-        return taxResponseMapper.toResponseList(taxJooqService.findAll());
+    public CommonResponse findAll() {
+        CommonResponse response = new CommonResponse();
+        response.setItem(taxResponseMapper.toResponseList(taxJooqService.findAll()));
+        return response;
     }
 
     @Override
-    public TaxResponse update(Long id, TaxRequest request) {
-        return taxResponseMapper.toResponse(taxJooqService.update(id, request));
+    public CommonResponse update(Long id, TaxRequest request) {
+        CommonResponse response = new CommonResponse();
+        response.setItem(taxResponseMapper.toResponse(taxJooqService.update(id, request)));
+        return response;
     }
 }

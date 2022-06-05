@@ -1,5 +1,6 @@
 package az.topaz.backofficeservice.service.businessService.agentBusinessService;
 
+import az.topaz.backofficeservice.dto.common.CommonResponse;
 import az.topaz.backofficeservice.dto.request.AgentRequest;
 import az.topaz.backofficeservice.dto.response.AgentCashiersResponse;
 import az.topaz.backofficeservice.dto.response.AgentResponse;
@@ -8,15 +9,15 @@ import java.util.List;
 
 public interface AgentBusinessService {
 
-    AgentResponse create(AgentRequest request);
+    CommonResponse create(AgentRequest request);
 
-    AgentResponse findById(Long id);
+    CommonResponse findById(Long id);
 
-    List<AgentResponse> findAll();
+    CommonResponse findAll();
 
-    AgentResponse update(Long id, AgentRequest request);
+    CommonResponse update(Long id, AgentRequest request);
 
-    Long getCountOfCashiers(Long id);
+    CommonResponse getCountOfCashiers(Long id);
 
-    List<AgentCashiersResponse> getAllAgentsWithCashiers();
+    CommonResponse getAllAgentsWithCashiers();
 }

@@ -1,18 +1,19 @@
 package az.topaz.ticketservice.service.businessService.ticketService;
 
+import az.topaz.ticketservice.dto.request.FullRequest;
 import az.topaz.ticketservice.dto.request.TicketRequest;
+import az.topaz.ticketservice.dto.response.FullResponse;
 import az.topaz.ticketservice.dto.response.TicketResponse;
 
 import java.util.List;
 
 public interface TicketBusinessService {
 
-    TicketResponse create(TicketRequest request);
+    FullResponse create(FullRequest request);
 
-    TicketResponse findById(Long id);
+    FullResponse findById(Long id);
 
-    List<TicketResponse> findAll();
+    List<FullResponse> findAll();
 
-    TicketResponse update(Long id, TicketRequest request);
-
+    FullResponse update(Long id, FullRequest request);
 }

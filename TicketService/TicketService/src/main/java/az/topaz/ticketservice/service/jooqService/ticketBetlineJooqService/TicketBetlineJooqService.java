@@ -4,7 +4,6 @@ import az.topaz.ticketservice.dto.request.TicketBetlineRequest;
 import nu.studer.sample.tables.records.TicketBetlineRecord;
 
 import java.util.List;
-import java.util.Map;
 
 public interface TicketBetlineJooqService {
 
@@ -14,7 +13,8 @@ public interface TicketBetlineJooqService {
 
     List<TicketBetlineRecord> findAll();
 
-    TicketBetlineRecord update(Long id, TicketBetlineRequest request);
+    List<TicketBetlineRecord> findAllByTicketId(Long id);
 
+    TicketBetlineRecord update(Long id, TicketBetlineRequest request);
 
 }

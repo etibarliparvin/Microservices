@@ -33,6 +33,7 @@ public class CashierRepositoryImpl implements CashierRepository<CashierRecord> {
                 .fetchOneInto(CashierRecord.class);
     }
 
+    // TODO pageable olacaq, limit ve offset gelecek.(integer)
     @Override
     public List<CashierRecord> findAll() {
         return context.select()

@@ -1,5 +1,6 @@
 package az.topaz.backofficeservice.service.businessService.agentBusinessService;
 
+import az.topaz.backofficeservice.dto.common.CommonResponse;
 import az.topaz.backofficeservice.dto.request.AgentRequest;
 import az.topaz.backofficeservice.dto.response.AgentCashiersResponse;
 import az.topaz.backofficeservice.dto.response.AgentResponse;
@@ -26,40 +27,52 @@ public class AgentBusinessServiceImpl implements AgentBusinessService {
     private final AgentJooqService agentJooqService;
 
     @Override
-    public AgentResponse create(AgentRequest request) {
-        return agentResponseMapper.toResponse(agentJooqService.create(request));
+    public CommonResponse create(AgentRequest request) {
+        CommonResponse response = new CommonResponse();
+        response.setItem(agentResponseMapper.toResponse(agentJooqService.create(request)));
+        return response;
     }
 
     @Override
-    public AgentResponse findById(Long id) {
-        return agentResponseMapper.toResponse(agentJooqService.findById(id));
+    public CommonResponse findById(Long id) {
+        CommonResponse response = new CommonResponse();
+        response.setItem(agentResponseMapper.toResponse(agentJooqService.findById(id)));
+        return response;
     }
 
     @Override
-    public List<AgentResponse> findAll() {
-        return agentResponseMapper.toResponseList(agentJooqService.findAll());
+    public CommonResponse findAll() {
+        CommonResponse response = new CommonResponse();
+        response.setItem(agentResponseMapper.toResponseList(agentJooqService.findAll()));
+        return response;
     }
 
     @Override
-    public AgentResponse update(Long id, AgentRequest request) {
-        return agentResponseMapper.toResponse(agentJooqService.update(id, request));
+    public CommonResponse update(Long id, AgentRequest request) {
+        CommonResponse response = new CommonResponse();
+        response.setItem(agentResponseMapper.toResponse(agentJooqService.update(id, request)));
+        return response;
     }
 
     @Override
-    public Long getCountOfCashiers(Long id) {
-        return agentJooqService.getCountOfCashiers(id);
+    public CommonResponse getCountOfCashiers(Long id) {
+        CommonResponse response = new CommonResponse();
+        response.setItem(agentJooqService.getCountOfCashiers(id));
+        return response;
     }
 
     @Override
-    public List<AgentCashiersResponse> getAllAgentsWithCashiers() {
+    public CommonResponse getAllAgentsWithCashiers() {
+        CommonResponse response = new CommonResponse();
         Map<AgentRecord, List<CashierRecord>> map = agentJooqService.getAllAgentsWithCashiers();
-        return map.entrySet().stream()
+        response.setItem(map.entrySet().stream()
                 .map(m -> {
                     AgentCashiersResponse agentCashiersResponse = new AgentCashiersResponse();
                     agentCashiersResponse.setAgentResponse(agentResponseMapper.toResponse(m.getKey()));
                     agentCashiersResponse.setCashierResponses(cashierResponseMapper.toResponseList(m.getValue()));
                     return agentCashiersResponse;
                 })
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()));
+        return response;
     }
 }

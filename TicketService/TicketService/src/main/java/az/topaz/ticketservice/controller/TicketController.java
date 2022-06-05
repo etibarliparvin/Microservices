@@ -1,5 +1,6 @@
 package az.topaz.ticketservice.controller;
 
+import az.topaz.ticketservice.dto.request.FullRequest;
 import az.topaz.ticketservice.dto.request.TicketRequest;
 import az.topaz.ticketservice.service.businessService.ticketService.TicketBusinessService;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +15,7 @@ public class TicketController {
     private final TicketBusinessService service;
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody TicketRequest request) {
+    public ResponseEntity<?> create(@RequestBody FullRequest request) {
         return ResponseEntity.ok(service.create(request));
     }
 
@@ -29,7 +30,7 @@ public class TicketController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable(name = "id") Long id, @RequestBody TicketRequest request) {
+    public ResponseEntity<?> update(@PathVariable(name = "id") Long id, @RequestBody FullRequest request) {
         return ResponseEntity.ok(service.update(id, request));
     }
 

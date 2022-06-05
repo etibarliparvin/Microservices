@@ -1,0 +1,62 @@
+syntax = "proto3";
+package agent;
+
+option java_package = "com.proto.agent";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+
+message ProtoFindByIdRequest {
+  int64 id = 1;
+}
+
+message ProtoTicketRequest {
+  string barcode = 1;
+  string cashierCode = 2;
+  string betType = 3;
+  string stakeAmound = 4;
+  string totalWinAmount = 5;
+  string totalPayAmount = 6;
+  string betTime = 7;
+  string ticketStatus = 8;
+  string odd = 9;
+  repeated ProtoTicketBetlineRequest protoTicketBetlineRequest = 10;
+}
+
+message ProtoTicketBetlineRequest {
+  int64 ticketId = 1;
+  string event = 2;
+  string sportName = 3;
+  string languageName = 4;
+  string categoryName = 5;
+  string eventStartTime = 6;
+}
+
+message ProtoTicketResponse {
+  int64 id = 1;
+  string barcode = 2;
+  string cashierCode = 3;
+  string betType = 4;
+  string stakeAmount = 5;
+  string totalWinAmount = 6;
+  string totalPayAmount = 7;
+  string betTime = 8;
+  string ticketStatus = 9;
+  string odd = 10;
+  repeated ProtoTicketBetlineResponse protoTicketBetlineResponse = 11;
+}
+
+message ProtoTicketBetlineResponse {
+  int64 id = 1;
+  int64 ticketId = 2;
+  string event = 3;
+  string sportName = 4;
+  string languageName = 5;
+  string categoryName = 6;
+  string eventStartTime = 7;
+}
+
+service ProtoTicketService {
+  rpc findById(ProtoFindByIdRequest) returns(ProtoTicketResponse);
+  rpc createTicket(ProtoTicketRequest) returns(ProtoTicketResponse);
+}

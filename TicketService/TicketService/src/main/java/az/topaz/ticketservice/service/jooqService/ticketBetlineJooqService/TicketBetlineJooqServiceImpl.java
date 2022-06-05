@@ -1,13 +1,10 @@
 package az.topaz.ticketservice.service.jooqService.ticketBetlineJooqService;
 
 import az.topaz.ticketservice.dto.request.TicketBetlineRequest;
-import az.topaz.ticketservice.dto.request.TicketRequest;
 import az.topaz.ticketservice.mapper.recordMapper.TicketBetlineRecordMapper;
 import az.topaz.ticketservice.repository.ticketBetline.TicketBetlineRepository;
-import az.topaz.ticketservice.service.jooqService.ticketJooqService.TicketJooqService;
 import lombok.RequiredArgsConstructor;
 import nu.studer.sample.tables.records.TicketBetlineRecord;
-import nu.studer.sample.tables.records.TicketRecord;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,6 +30,11 @@ public class TicketBetlineJooqServiceImpl implements TicketBetlineJooqService {
     @Override
     public List<TicketBetlineRecord> findAll() {
         return ticketBetlineRepository.findAll();
+    }
+
+    @Override
+    public List<TicketBetlineRecord> findAllByTicketId(Long id) {
+        return ticketBetlineRepository.getAllBetlinesWithTicketId(id);
     }
 
     @Override
