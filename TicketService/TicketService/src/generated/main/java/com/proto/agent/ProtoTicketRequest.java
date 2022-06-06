@@ -19,12 +19,7 @@ private static final long serialVersionUID = 0L;
     barcode_ = "";
     cashierCode_ = "";
     betType_ = "";
-    stakeAmound_ = "";
-    totalWinAmount_ = "";
-    totalPayAmount_ = "";
-    betTime_ = "";
     ticketStatus_ = "";
-    odd_ = "";
     protoTicketBetlineRequest_ = java.util.Collections.emptyList();
   }
 
@@ -77,28 +72,24 @@ private static final long serialVersionUID = 0L;
             betType_ = s;
             break;
           }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 33: {
 
-            stakeAmound_ = s;
+            stakeAmount_ = input.readDouble();
             break;
           }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 41: {
 
-            totalWinAmount_ = s;
+            totalWinAmount_ = input.readDouble();
             break;
           }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 49: {
 
-            totalPayAmount_ = s;
+            totalPayAmount_ = input.readDouble();
             break;
           }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 56: {
 
-            betTime_ = s;
+            betTime_ = input.readInt64();
             break;
           }
           case 66: {
@@ -107,10 +98,9 @@ private static final long serialVersionUID = 0L;
             ticketStatus_ = s;
             break;
           }
-          case 74: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 73: {
 
-            odd_ = s;
+            odd_ = input.readDouble();
             break;
           }
           case 82: {
@@ -271,156 +261,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int STAKEAMOUND_FIELD_NUMBER = 4;
-  private volatile java.lang.Object stakeAmound_;
+  public static final int STAKEAMOUNT_FIELD_NUMBER = 4;
+  private double stakeAmount_;
   /**
-   * <code>string stakeAmound = 4;</code>
-   * @return The stakeAmound.
+   * <code>double stakeAmount = 4;</code>
+   * @return The stakeAmount.
    */
   @java.lang.Override
-  public java.lang.String getStakeAmound() {
-    java.lang.Object ref = stakeAmound_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      stakeAmound_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string stakeAmound = 4;</code>
-   * @return The bytes for stakeAmound.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getStakeAmoundBytes() {
-    java.lang.Object ref = stakeAmound_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      stakeAmound_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public double getStakeAmount() {
+    return stakeAmount_;
   }
 
   public static final int TOTALWINAMOUNT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object totalWinAmount_;
+  private double totalWinAmount_;
   /**
-   * <code>string totalWinAmount = 5;</code>
+   * <code>double totalWinAmount = 5;</code>
    * @return The totalWinAmount.
    */
   @java.lang.Override
-  public java.lang.String getTotalWinAmount() {
-    java.lang.Object ref = totalWinAmount_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      totalWinAmount_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string totalWinAmount = 5;</code>
-   * @return The bytes for totalWinAmount.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTotalWinAmountBytes() {
-    java.lang.Object ref = totalWinAmount_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      totalWinAmount_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public double getTotalWinAmount() {
+    return totalWinAmount_;
   }
 
   public static final int TOTALPAYAMOUNT_FIELD_NUMBER = 6;
-  private volatile java.lang.Object totalPayAmount_;
+  private double totalPayAmount_;
   /**
-   * <code>string totalPayAmount = 6;</code>
+   * <code>double totalPayAmount = 6;</code>
    * @return The totalPayAmount.
    */
   @java.lang.Override
-  public java.lang.String getTotalPayAmount() {
-    java.lang.Object ref = totalPayAmount_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      totalPayAmount_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string totalPayAmount = 6;</code>
-   * @return The bytes for totalPayAmount.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTotalPayAmountBytes() {
-    java.lang.Object ref = totalPayAmount_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      totalPayAmount_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public double getTotalPayAmount() {
+    return totalPayAmount_;
   }
 
   public static final int BETTIME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object betTime_;
+  private long betTime_;
   /**
-   * <code>string betTime = 7;</code>
+   * <code>int64 betTime = 7;</code>
    * @return The betTime.
    */
   @java.lang.Override
-  public java.lang.String getBetTime() {
-    java.lang.Object ref = betTime_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      betTime_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string betTime = 7;</code>
-   * @return The bytes for betTime.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getBetTimeBytes() {
-    java.lang.Object ref = betTime_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      betTime_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getBetTime() {
+    return betTime_;
   }
 
   public static final int TICKETSTATUS_FIELD_NUMBER = 8;
@@ -462,41 +344,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ODD_FIELD_NUMBER = 9;
-  private volatile java.lang.Object odd_;
+  private double odd_;
   /**
-   * <code>string odd = 9;</code>
+   * <code>double odd = 9;</code>
    * @return The odd.
    */
   @java.lang.Override
-  public java.lang.String getOdd() {
-    java.lang.Object ref = odd_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      odd_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string odd = 9;</code>
-   * @return The bytes for odd.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getOddBytes() {
-    java.lang.Object ref = odd_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      odd_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public double getOdd() {
+    return odd_;
   }
 
   public static final int PROTOTICKETBETLINEREQUEST_FIELD_NUMBER = 10;
@@ -562,23 +417,23 @@ private static final long serialVersionUID = 0L;
     if (!getBetTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, betType_);
     }
-    if (!getStakeAmoundBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, stakeAmound_);
+    if (stakeAmount_ != 0D) {
+      output.writeDouble(4, stakeAmount_);
     }
-    if (!getTotalWinAmountBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, totalWinAmount_);
+    if (totalWinAmount_ != 0D) {
+      output.writeDouble(5, totalWinAmount_);
     }
-    if (!getTotalPayAmountBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, totalPayAmount_);
+    if (totalPayAmount_ != 0D) {
+      output.writeDouble(6, totalPayAmount_);
     }
-    if (!getBetTimeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, betTime_);
+    if (betTime_ != 0L) {
+      output.writeInt64(7, betTime_);
     }
     if (!getTicketStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, ticketStatus_);
     }
-    if (!getOddBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, odd_);
+    if (odd_ != 0D) {
+      output.writeDouble(9, odd_);
     }
     for (int i = 0; i < protoTicketBetlineRequest_.size(); i++) {
       output.writeMessage(10, protoTicketBetlineRequest_.get(i));
@@ -601,23 +456,28 @@ private static final long serialVersionUID = 0L;
     if (!getBetTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, betType_);
     }
-    if (!getStakeAmoundBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, stakeAmound_);
+    if (stakeAmount_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(4, stakeAmount_);
     }
-    if (!getTotalWinAmountBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, totalWinAmount_);
+    if (totalWinAmount_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(5, totalWinAmount_);
     }
-    if (!getTotalPayAmountBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, totalPayAmount_);
+    if (totalPayAmount_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(6, totalPayAmount_);
     }
-    if (!getBetTimeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, betTime_);
+    if (betTime_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(7, betTime_);
     }
     if (!getTicketStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, ticketStatus_);
     }
-    if (!getOddBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, odd_);
+    if (odd_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(9, odd_);
     }
     for (int i = 0; i < protoTicketBetlineRequest_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -644,18 +504,22 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCashierCode())) return false;
     if (!getBetType()
         .equals(other.getBetType())) return false;
-    if (!getStakeAmound()
-        .equals(other.getStakeAmound())) return false;
-    if (!getTotalWinAmount()
-        .equals(other.getTotalWinAmount())) return false;
-    if (!getTotalPayAmount()
-        .equals(other.getTotalPayAmount())) return false;
-    if (!getBetTime()
-        .equals(other.getBetTime())) return false;
+    if (java.lang.Double.doubleToLongBits(getStakeAmount())
+        != java.lang.Double.doubleToLongBits(
+            other.getStakeAmount())) return false;
+    if (java.lang.Double.doubleToLongBits(getTotalWinAmount())
+        != java.lang.Double.doubleToLongBits(
+            other.getTotalWinAmount())) return false;
+    if (java.lang.Double.doubleToLongBits(getTotalPayAmount())
+        != java.lang.Double.doubleToLongBits(
+            other.getTotalPayAmount())) return false;
+    if (getBetTime()
+        != other.getBetTime()) return false;
     if (!getTicketStatus()
         .equals(other.getTicketStatus())) return false;
-    if (!getOdd()
-        .equals(other.getOdd())) return false;
+    if (java.lang.Double.doubleToLongBits(getOdd())
+        != java.lang.Double.doubleToLongBits(
+            other.getOdd())) return false;
     if (!getProtoTicketBetlineRequestList()
         .equals(other.getProtoTicketBetlineRequestList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -675,18 +539,23 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCashierCode().hashCode();
     hash = (37 * hash) + BETTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getBetType().hashCode();
-    hash = (37 * hash) + STAKEAMOUND_FIELD_NUMBER;
-    hash = (53 * hash) + getStakeAmound().hashCode();
+    hash = (37 * hash) + STAKEAMOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getStakeAmount()));
     hash = (37 * hash) + TOTALWINAMOUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getTotalWinAmount().hashCode();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getTotalWinAmount()));
     hash = (37 * hash) + TOTALPAYAMOUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getTotalPayAmount().hashCode();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getTotalPayAmount()));
     hash = (37 * hash) + BETTIME_FIELD_NUMBER;
-    hash = (53 * hash) + getBetTime().hashCode();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getBetTime());
     hash = (37 * hash) + TICKETSTATUS_FIELD_NUMBER;
     hash = (53 * hash) + getTicketStatus().hashCode();
     hash = (37 * hash) + ODD_FIELD_NUMBER;
-    hash = (53 * hash) + getOdd().hashCode();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getOdd()));
     if (getProtoTicketBetlineRequestCount() > 0) {
       hash = (37 * hash) + PROTOTICKETBETLINEREQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getProtoTicketBetlineRequestList().hashCode();
@@ -831,17 +700,17 @@ private static final long serialVersionUID = 0L;
 
       betType_ = "";
 
-      stakeAmound_ = "";
+      stakeAmount_ = 0D;
 
-      totalWinAmount_ = "";
+      totalWinAmount_ = 0D;
 
-      totalPayAmount_ = "";
+      totalPayAmount_ = 0D;
 
-      betTime_ = "";
+      betTime_ = 0L;
 
       ticketStatus_ = "";
 
-      odd_ = "";
+      odd_ = 0D;
 
       if (protoTicketBetlineRequestBuilder_ == null) {
         protoTicketBetlineRequest_ = java.util.Collections.emptyList();
@@ -879,7 +748,7 @@ private static final long serialVersionUID = 0L;
       result.barcode_ = barcode_;
       result.cashierCode_ = cashierCode_;
       result.betType_ = betType_;
-      result.stakeAmound_ = stakeAmound_;
+      result.stakeAmount_ = stakeAmount_;
       result.totalWinAmount_ = totalWinAmount_;
       result.totalPayAmount_ = totalPayAmount_;
       result.betTime_ = betTime_;
@@ -954,29 +823,24 @@ private static final long serialVersionUID = 0L;
         betType_ = other.betType_;
         onChanged();
       }
-      if (!other.getStakeAmound().isEmpty()) {
-        stakeAmound_ = other.stakeAmound_;
-        onChanged();
+      if (other.getStakeAmount() != 0D) {
+        setStakeAmount(other.getStakeAmount());
       }
-      if (!other.getTotalWinAmount().isEmpty()) {
-        totalWinAmount_ = other.totalWinAmount_;
-        onChanged();
+      if (other.getTotalWinAmount() != 0D) {
+        setTotalWinAmount(other.getTotalWinAmount());
       }
-      if (!other.getTotalPayAmount().isEmpty()) {
-        totalPayAmount_ = other.totalPayAmount_;
-        onChanged();
+      if (other.getTotalPayAmount() != 0D) {
+        setTotalPayAmount(other.getTotalPayAmount());
       }
-      if (!other.getBetTime().isEmpty()) {
-        betTime_ = other.betTime_;
-        onChanged();
+      if (other.getBetTime() != 0L) {
+        setBetTime(other.getBetTime());
       }
       if (!other.getTicketStatus().isEmpty()) {
         ticketStatus_ = other.ticketStatus_;
         onChanged();
       }
-      if (!other.getOdd().isEmpty()) {
-        odd_ = other.odd_;
-        onChanged();
+      if (other.getOdd() != 0D) {
+        setOdd(other.getOdd());
       }
       if (protoTicketBetlineRequestBuilder_ == null) {
         if (!other.protoTicketBetlineRequest_.isEmpty()) {
@@ -1262,306 +1126,126 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object stakeAmound_ = "";
+    private double stakeAmount_ ;
     /**
-     * <code>string stakeAmound = 4;</code>
-     * @return The stakeAmound.
+     * <code>double stakeAmount = 4;</code>
+     * @return The stakeAmount.
      */
-    public java.lang.String getStakeAmound() {
-      java.lang.Object ref = stakeAmound_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        stakeAmound_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public double getStakeAmount() {
+      return stakeAmount_;
     }
     /**
-     * <code>string stakeAmound = 4;</code>
-     * @return The bytes for stakeAmound.
-     */
-    public com.google.protobuf.ByteString
-        getStakeAmoundBytes() {
-      java.lang.Object ref = stakeAmound_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        stakeAmound_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string stakeAmound = 4;</code>
-     * @param value The stakeAmound to set.
+     * <code>double stakeAmount = 4;</code>
+     * @param value The stakeAmount to set.
      * @return This builder for chaining.
      */
-    public Builder setStakeAmound(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      stakeAmound_ = value;
+    public Builder setStakeAmount(double value) {
+      
+      stakeAmount_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string stakeAmound = 4;</code>
+     * <code>double stakeAmount = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearStakeAmound() {
+    public Builder clearStakeAmount() {
       
-      stakeAmound_ = getDefaultInstance().getStakeAmound();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string stakeAmound = 4;</code>
-     * @param value The bytes for stakeAmound to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStakeAmoundBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      stakeAmound_ = value;
+      stakeAmount_ = 0D;
       onChanged();
       return this;
     }
 
-    private java.lang.Object totalWinAmount_ = "";
+    private double totalWinAmount_ ;
     /**
-     * <code>string totalWinAmount = 5;</code>
+     * <code>double totalWinAmount = 5;</code>
      * @return The totalWinAmount.
      */
-    public java.lang.String getTotalWinAmount() {
-      java.lang.Object ref = totalWinAmount_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        totalWinAmount_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public double getTotalWinAmount() {
+      return totalWinAmount_;
     }
     /**
-     * <code>string totalWinAmount = 5;</code>
-     * @return The bytes for totalWinAmount.
-     */
-    public com.google.protobuf.ByteString
-        getTotalWinAmountBytes() {
-      java.lang.Object ref = totalWinAmount_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        totalWinAmount_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string totalWinAmount = 5;</code>
+     * <code>double totalWinAmount = 5;</code>
      * @param value The totalWinAmount to set.
      * @return This builder for chaining.
      */
-    public Builder setTotalWinAmount(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+    public Builder setTotalWinAmount(double value) {
+      
       totalWinAmount_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string totalWinAmount = 5;</code>
+     * <code>double totalWinAmount = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearTotalWinAmount() {
       
-      totalWinAmount_ = getDefaultInstance().getTotalWinAmount();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string totalWinAmount = 5;</code>
-     * @param value The bytes for totalWinAmount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTotalWinAmountBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      totalWinAmount_ = value;
+      totalWinAmount_ = 0D;
       onChanged();
       return this;
     }
 
-    private java.lang.Object totalPayAmount_ = "";
+    private double totalPayAmount_ ;
     /**
-     * <code>string totalPayAmount = 6;</code>
+     * <code>double totalPayAmount = 6;</code>
      * @return The totalPayAmount.
      */
-    public java.lang.String getTotalPayAmount() {
-      java.lang.Object ref = totalPayAmount_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        totalPayAmount_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public double getTotalPayAmount() {
+      return totalPayAmount_;
     }
     /**
-     * <code>string totalPayAmount = 6;</code>
-     * @return The bytes for totalPayAmount.
-     */
-    public com.google.protobuf.ByteString
-        getTotalPayAmountBytes() {
-      java.lang.Object ref = totalPayAmount_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        totalPayAmount_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string totalPayAmount = 6;</code>
+     * <code>double totalPayAmount = 6;</code>
      * @param value The totalPayAmount to set.
      * @return This builder for chaining.
      */
-    public Builder setTotalPayAmount(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+    public Builder setTotalPayAmount(double value) {
+      
       totalPayAmount_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string totalPayAmount = 6;</code>
+     * <code>double totalPayAmount = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearTotalPayAmount() {
       
-      totalPayAmount_ = getDefaultInstance().getTotalPayAmount();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string totalPayAmount = 6;</code>
-     * @param value The bytes for totalPayAmount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTotalPayAmountBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      totalPayAmount_ = value;
+      totalPayAmount_ = 0D;
       onChanged();
       return this;
     }
 
-    private java.lang.Object betTime_ = "";
+    private long betTime_ ;
     /**
-     * <code>string betTime = 7;</code>
+     * <code>int64 betTime = 7;</code>
      * @return The betTime.
      */
-    public java.lang.String getBetTime() {
-      java.lang.Object ref = betTime_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        betTime_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getBetTime() {
+      return betTime_;
     }
     /**
-     * <code>string betTime = 7;</code>
-     * @return The bytes for betTime.
-     */
-    public com.google.protobuf.ByteString
-        getBetTimeBytes() {
-      java.lang.Object ref = betTime_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        betTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string betTime = 7;</code>
+     * <code>int64 betTime = 7;</code>
      * @param value The betTime to set.
      * @return This builder for chaining.
      */
-    public Builder setBetTime(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+    public Builder setBetTime(long value) {
+      
       betTime_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string betTime = 7;</code>
+     * <code>int64 betTime = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearBetTime() {
       
-      betTime_ = getDefaultInstance().getBetTime();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string betTime = 7;</code>
-     * @param value The bytes for betTime to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBetTimeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      betTime_ = value;
+      betTime_ = 0L;
       onChanged();
       return this;
     }
@@ -1642,78 +1326,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object odd_ = "";
+    private double odd_ ;
     /**
-     * <code>string odd = 9;</code>
+     * <code>double odd = 9;</code>
      * @return The odd.
      */
-    public java.lang.String getOdd() {
-      java.lang.Object ref = odd_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        odd_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public double getOdd() {
+      return odd_;
     }
     /**
-     * <code>string odd = 9;</code>
-     * @return The bytes for odd.
-     */
-    public com.google.protobuf.ByteString
-        getOddBytes() {
-      java.lang.Object ref = odd_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        odd_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string odd = 9;</code>
+     * <code>double odd = 9;</code>
      * @param value The odd to set.
      * @return This builder for chaining.
      */
-    public Builder setOdd(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+    public Builder setOdd(double value) {
+      
       odd_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string odd = 9;</code>
+     * <code>double odd = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearOdd() {
       
-      odd_ = getDefaultInstance().getOdd();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string odd = 9;</code>
-     * @param value The bytes for odd to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOddBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      odd_ = value;
+      odd_ = 0D;
       onChanged();
       return this;
     }

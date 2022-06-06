@@ -14,12 +14,12 @@ message ProtoTicketRequest {
   string barcode = 1;
   string cashierCode = 2;
   string betType = 3;
-  string stakeAmount = 4;
-  string totalWinAmount = 5;
-  string totalPayAmount = 6;
-  string betTime = 7;
+  double stakeAmount = 4;
+  double totalWinAmount = 5;
+  double totalPayAmount = 6;
+  int64 betTime = 7;
   string ticketStatus = 8;
-  string odd = 9;
+  double odd = 9;
   repeated ProtoTicketBetlineRequest protoTicketBetlineRequest = 10;
 }
 
@@ -29,7 +29,7 @@ message ProtoTicketBetlineRequest {
   string sportName = 3;
   string languageName = 4;
   string categoryName = 5;
-  string eventStartTime = 6;
+  int64 eventStartTime = 6;
 }
 
 message ProtoTicketResponse {
@@ -37,12 +37,12 @@ message ProtoTicketResponse {
   string barcode = 2;
   string cashierCode = 3;
   string betType = 4;
-  string stakeAmound = 5;
-  string totalWinAmount = 6;
-  string totalPayAmount = 7;
-  string betTime = 8;
+  double stakeAmount = 5;
+  double totalWinAmount = 6;
+  double totalPayAmount = 7;
+  int64 betTime = 8;
   string ticketStatus = 9;
-  string odd = 10;
+  double odd = 10;
   repeated ProtoTicketBetlineResponse protoTicketBetlineResponse = 11;
 }
 
@@ -53,10 +53,10 @@ message ProtoTicketBetlineResponse {
   string sportName = 4;
   string languageName = 5;
   string categoryName = 6;
-  string eventStartTime = 7;
+  int64 eventStartTime = 7;
 }
 
 service ProtoTicketService {
   rpc findById(ProtoFindByIdRequest) returns(ProtoTicketResponse);
-  rpc createTicket(ProtoFindByIdRequest) returns(ProtoTicketResponse);
+  rpc createTicket(ProtoTicketRequest) returns(ProtoTicketResponse);
 }

@@ -1,13 +1,18 @@
 package az.topaz.agentservice.grpc;
 
-import com.proto.agent.ProtoFindByIdRequest;
-import com.proto.agent.ProtoTicketResponse;
-import com.proto.agent.ProtoTicketServiceGrpc;
+import az.topaz.agentservice.dto.request.FullRequest;
+import az.topaz.agentservice.dto.request.TicketBetlineRequest;
+import az.topaz.agentservice.dto.request.TicketRequest;
+import az.topaz.agentservice.dto.response.FullResponse;
+import com.proto.agent.*;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class AgentClientService {
@@ -21,11 +26,43 @@ public class AgentClientService {
     }
 
     public ProtoTicketResponse findTicketById(Long id) {
-        System.out.println(id);
         ProtoFindByIdRequest build = ProtoFindByIdRequest.newBuilder().setId(id).build();
         ProtoTicketResponse ticketResponse = stub.findById(build);
-        System.out.println(ticketResponse);
         return ticketResponse;
     }
 
+    public ProtoTicketResponse create(FullRequest fullRequest) {
+        TicketRequest ticketRequest = fullRequest.getTicketRequest();
+        List<TicketBetlineRequest> ticketBetlineRequestList = fullRequest.getTicketBetlineRequestList();
+
+        List<ProtoTicketBetlineRequest> requests = new ArrayList<>();
+
+        for (int i = 0; i < ticketBetlineRequestList.size(); i++) {
+            ProtoTicketBetlineRequest request = ProtoTicketBetlineRequest.newBuilder()
+                    .setTicketId(ticketBetlineRequestList.get(i).getTicketId())
+                    .setEvent(ticketBetlineRequestList.get(i).getEvent())
+                    .setSportName(ticketBetlineRequestList.get(i).getSportName())
+                    .setLanguageName(ticketBetlineRequestList.get(i).getLanguageName())
+                    .setCategoryName(ticketBetlineRequestList.get(i).getCategoryName())
+                    .setEventStartTime(Timestamp.valueOf(ticketBetlineRequestList.get(i).getEventStartTime()).getTime())
+                    .build();
+            requests.add(request);
+        }
+
+        ProtoTicketRequest build = ProtoTicketRequest.newBuilder()
+                .setBarcode(ticketRequest.getBarcode())
+                .setCashierCode(ticketRequest.getCashierCode())
+                .setBetType(ticketRequest.getBetType())
+                .setStakeAmount(ticketRequest.getStakeAmount().doubleValue())
+                .setTotalWinAmount(ticketRequest.getTotalWinAmount().doubleValue())
+                .setTotalPayAmount(ticketRequest.getTotalPayAmount().doubleValue())
+                .setBetTime(Timestamp.valueOf(ticketRequest.getBetTime()).getTime())
+                .setTicketStatus(ticketRequest.getTicketStatus())
+                .setOdd(ticketRequest.getOdd().doubleValue())
+                .addAllProtoTicketBetlineRequest(requests)
+                .build();
+
+        ProtoTicketResponse ticketResponse = stub.createTicket(build);
+        return ticketResponse;
+    }
 }

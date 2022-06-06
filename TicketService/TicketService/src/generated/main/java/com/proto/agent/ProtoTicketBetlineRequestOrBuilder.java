@@ -62,14 +62,8 @@ public interface ProtoTicketBetlineRequestOrBuilder extends
       getCategoryNameBytes();
 
   /**
-   * <code>string eventStartTime = 6;</code>
+   * <code>int64 eventStartTime = 6;</code>
    * @return The eventStartTime.
    */
-  java.lang.String getEventStartTime();
-  /**
-   * <code>string eventStartTime = 6;</code>
-   * @return The bytes for eventStartTime.
-   */
-  com.google.protobuf.ByteString
-      getEventStartTimeBytes();
+  long getEventStartTime();
 }

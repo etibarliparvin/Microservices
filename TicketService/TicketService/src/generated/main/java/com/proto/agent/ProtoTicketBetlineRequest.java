@@ -20,7 +20,6 @@ private static final long serialVersionUID = 0L;
     sportName_ = "";
     languageName_ = "";
     categoryName_ = "";
-    eventStartTime_ = "";
   }
 
   @java.lang.Override
@@ -82,10 +81,9 @@ private static final long serialVersionUID = 0L;
             categoryName_ = s;
             break;
           }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 48: {
 
-            eventStartTime_ = s;
+            eventStartTime_ = input.readInt64();
             break;
           }
           default: {
@@ -284,41 +282,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int EVENTSTARTTIME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object eventStartTime_;
+  private long eventStartTime_;
   /**
-   * <code>string eventStartTime = 6;</code>
+   * <code>int64 eventStartTime = 6;</code>
    * @return The eventStartTime.
    */
   @java.lang.Override
-  public java.lang.String getEventStartTime() {
-    java.lang.Object ref = eventStartTime_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      eventStartTime_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string eventStartTime = 6;</code>
-   * @return The bytes for eventStartTime.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getEventStartTimeBytes() {
-    java.lang.Object ref = eventStartTime_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      eventStartTime_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getEventStartTime() {
+    return eventStartTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -350,8 +321,8 @@ private static final long serialVersionUID = 0L;
     if (!getCategoryNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, categoryName_);
     }
-    if (!getEventStartTimeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, eventStartTime_);
+    if (eventStartTime_ != 0L) {
+      output.writeInt64(6, eventStartTime_);
     }
     unknownFields.writeTo(output);
   }
@@ -378,8 +349,9 @@ private static final long serialVersionUID = 0L;
     if (!getCategoryNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, categoryName_);
     }
-    if (!getEventStartTimeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, eventStartTime_);
+    if (eventStartTime_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(6, eventStartTime_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -406,8 +378,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLanguageName())) return false;
     if (!getCategoryName()
         .equals(other.getCategoryName())) return false;
-    if (!getEventStartTime()
-        .equals(other.getEventStartTime())) return false;
+    if (getEventStartTime()
+        != other.getEventStartTime()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -431,7 +403,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + CATEGORYNAME_FIELD_NUMBER;
     hash = (53 * hash) + getCategoryName().hashCode();
     hash = (37 * hash) + EVENTSTARTTIME_FIELD_NUMBER;
-    hash = (53 * hash) + getEventStartTime().hashCode();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getEventStartTime());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -575,7 +548,7 @@ private static final long serialVersionUID = 0L;
 
       categoryName_ = "";
 
-      eventStartTime_ = "";
+      eventStartTime_ = 0L;
 
       return this;
     }
@@ -676,9 +649,8 @@ private static final long serialVersionUID = 0L;
         categoryName_ = other.categoryName_;
         onChanged();
       }
-      if (!other.getEventStartTime().isEmpty()) {
-        eventStartTime_ = other.eventStartTime_;
-        onChanged();
+      if (other.getEventStartTime() != 0L) {
+        setEventStartTime(other.getEventStartTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1044,78 +1016,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object eventStartTime_ = "";
+    private long eventStartTime_ ;
     /**
-     * <code>string eventStartTime = 6;</code>
+     * <code>int64 eventStartTime = 6;</code>
      * @return The eventStartTime.
      */
-    public java.lang.String getEventStartTime() {
-      java.lang.Object ref = eventStartTime_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        eventStartTime_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getEventStartTime() {
+      return eventStartTime_;
     }
     /**
-     * <code>string eventStartTime = 6;</code>
-     * @return The bytes for eventStartTime.
-     */
-    public com.google.protobuf.ByteString
-        getEventStartTimeBytes() {
-      java.lang.Object ref = eventStartTime_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        eventStartTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string eventStartTime = 6;</code>
+     * <code>int64 eventStartTime = 6;</code>
      * @param value The eventStartTime to set.
      * @return This builder for chaining.
      */
-    public Builder setEventStartTime(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+    public Builder setEventStartTime(long value) {
+      
       eventStartTime_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string eventStartTime = 6;</code>
+     * <code>int64 eventStartTime = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearEventStartTime() {
       
-      eventStartTime_ = getDefaultInstance().getEventStartTime();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string eventStartTime = 6;</code>
-     * @param value The bytes for eventStartTime to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEventStartTimeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      eventStartTime_ = value;
+      eventStartTime_ = 0L;
       onChanged();
       return this;
     }

@@ -45,27 +45,27 @@ public final class ProtoTicketServiceGrpc {
     return getFindByIdMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.proto.agent.ProtoFindByIdRequest,
+  private static volatile io.grpc.MethodDescriptor<com.proto.agent.ProtoTicketRequest,
       com.proto.agent.ProtoTicketResponse> getCreateTicketMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "createTicket",
-      requestType = com.proto.agent.ProtoFindByIdRequest.class,
+      requestType = com.proto.agent.ProtoTicketRequest.class,
       responseType = com.proto.agent.ProtoTicketResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.proto.agent.ProtoFindByIdRequest,
+  public static io.grpc.MethodDescriptor<com.proto.agent.ProtoTicketRequest,
       com.proto.agent.ProtoTicketResponse> getCreateTicketMethod() {
-    io.grpc.MethodDescriptor<com.proto.agent.ProtoFindByIdRequest, com.proto.agent.ProtoTicketResponse> getCreateTicketMethod;
+    io.grpc.MethodDescriptor<com.proto.agent.ProtoTicketRequest, com.proto.agent.ProtoTicketResponse> getCreateTicketMethod;
     if ((getCreateTicketMethod = ProtoTicketServiceGrpc.getCreateTicketMethod) == null) {
       synchronized (ProtoTicketServiceGrpc.class) {
         if ((getCreateTicketMethod = ProtoTicketServiceGrpc.getCreateTicketMethod) == null) {
           ProtoTicketServiceGrpc.getCreateTicketMethod = getCreateTicketMethod =
-              io.grpc.MethodDescriptor.<com.proto.agent.ProtoFindByIdRequest, com.proto.agent.ProtoTicketResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.proto.agent.ProtoTicketRequest, com.proto.agent.ProtoTicketResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "createTicket"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.proto.agent.ProtoFindByIdRequest.getDefaultInstance()))
+                  com.proto.agent.ProtoTicketRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.proto.agent.ProtoTicketResponse.getDefaultInstance()))
               .setSchemaDescriptor(new ProtoTicketServiceMethodDescriptorSupplier("createTicket"))
@@ -133,7 +133,7 @@ public final class ProtoTicketServiceGrpc {
 
     /**
      */
-    public void createTicket(com.proto.agent.ProtoFindByIdRequest request,
+    public void createTicket(com.proto.agent.ProtoTicketRequest request,
         io.grpc.stub.StreamObserver<com.proto.agent.ProtoTicketResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateTicketMethod(), responseObserver);
     }
@@ -151,7 +151,7 @@ public final class ProtoTicketServiceGrpc {
             getCreateTicketMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.proto.agent.ProtoFindByIdRequest,
+                com.proto.agent.ProtoTicketRequest,
                 com.proto.agent.ProtoTicketResponse>(
                   this, METHODID_CREATE_TICKET)))
           .build();
@@ -182,7 +182,7 @@ public final class ProtoTicketServiceGrpc {
 
     /**
      */
-    public void createTicket(com.proto.agent.ProtoFindByIdRequest request,
+    public void createTicket(com.proto.agent.ProtoTicketRequest request,
         io.grpc.stub.StreamObserver<com.proto.agent.ProtoTicketResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateTicketMethod(), getCallOptions()), request, responseObserver);
@@ -212,7 +212,7 @@ public final class ProtoTicketServiceGrpc {
 
     /**
      */
-    public com.proto.agent.ProtoTicketResponse createTicket(com.proto.agent.ProtoFindByIdRequest request) {
+    public com.proto.agent.ProtoTicketResponse createTicket(com.proto.agent.ProtoTicketRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateTicketMethod(), getCallOptions(), request);
     }
@@ -243,7 +243,7 @@ public final class ProtoTicketServiceGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.proto.agent.ProtoTicketResponse> createTicket(
-        com.proto.agent.ProtoFindByIdRequest request) {
+        com.proto.agent.ProtoTicketRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateTicketMethod(), getCallOptions()), request);
     }
@@ -274,7 +274,7 @@ public final class ProtoTicketServiceGrpc {
               (io.grpc.stub.StreamObserver<com.proto.agent.ProtoTicketResponse>) responseObserver);
           break;
         case METHODID_CREATE_TICKET:
-          serviceImpl.createTicket((com.proto.agent.ProtoFindByIdRequest) request,
+          serviceImpl.createTicket((com.proto.agent.ProtoTicketRequest) request,
               (io.grpc.stub.StreamObserver<com.proto.agent.ProtoTicketResponse>) responseObserver);
           break;
         default:

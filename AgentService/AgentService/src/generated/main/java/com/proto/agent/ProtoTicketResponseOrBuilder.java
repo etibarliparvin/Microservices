@@ -50,52 +50,28 @@ public interface ProtoTicketResponseOrBuilder extends
       getBetTypeBytes();
 
   /**
-   * <code>string stakeAmound = 5;</code>
-   * @return The stakeAmound.
+   * <code>double stakeAmount = 5;</code>
+   * @return The stakeAmount.
    */
-  java.lang.String getStakeAmound();
-  /**
-   * <code>string stakeAmound = 5;</code>
-   * @return The bytes for stakeAmound.
-   */
-  com.google.protobuf.ByteString
-      getStakeAmoundBytes();
+  double getStakeAmount();
 
   /**
-   * <code>string totalWinAmount = 6;</code>
+   * <code>double totalWinAmount = 6;</code>
    * @return The totalWinAmount.
    */
-  java.lang.String getTotalWinAmount();
-  /**
-   * <code>string totalWinAmount = 6;</code>
-   * @return The bytes for totalWinAmount.
-   */
-  com.google.protobuf.ByteString
-      getTotalWinAmountBytes();
+  double getTotalWinAmount();
 
   /**
-   * <code>string totalPayAmount = 7;</code>
+   * <code>double totalPayAmount = 7;</code>
    * @return The totalPayAmount.
    */
-  java.lang.String getTotalPayAmount();
-  /**
-   * <code>string totalPayAmount = 7;</code>
-   * @return The bytes for totalPayAmount.
-   */
-  com.google.protobuf.ByteString
-      getTotalPayAmountBytes();
+  double getTotalPayAmount();
 
   /**
-   * <code>string betTime = 8;</code>
+   * <code>int64 betTime = 8;</code>
    * @return The betTime.
    */
-  java.lang.String getBetTime();
-  /**
-   * <code>string betTime = 8;</code>
-   * @return The bytes for betTime.
-   */
-  com.google.protobuf.ByteString
-      getBetTimeBytes();
+  long getBetTime();
 
   /**
    * <code>string ticketStatus = 9;</code>
@@ -110,16 +86,10 @@ public interface ProtoTicketResponseOrBuilder extends
       getTicketStatusBytes();
 
   /**
-   * <code>string odd = 10;</code>
+   * <code>double odd = 10;</code>
    * @return The odd.
    */
-  java.lang.String getOdd();
-  /**
-   * <code>string odd = 10;</code>
-   * @return The bytes for odd.
-   */
-  com.google.protobuf.ByteString
-      getOddBytes();
+  double getOdd();
 
   /**
    * <code>repeated .agent.ProtoTicketBetlineResponse protoTicketBetlineResponse = 11;</code>
