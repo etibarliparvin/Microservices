@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2022.06.07
+      author: etibarli
+      changes:
+        - createTable:
+            tableName: user_menu_join
+            schemaName: user_schema
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: user_menu_pk
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: bigint
+              - column:
+                  name: menu_id
+                  type: bigint
+              - column:
+                  name: role_id
+                  type: bigint

@@ -1,7 +1,7 @@
 package az.topaz.backofficeservice.mapper.recordMapper;
 
 import az.topaz.backofficeservice.dto.request.CashierRequest;
-import nu.studer.sample.tables.records.CashierRecord;
+import nu.studer.sample.public_.tables.records.CashierRecord;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

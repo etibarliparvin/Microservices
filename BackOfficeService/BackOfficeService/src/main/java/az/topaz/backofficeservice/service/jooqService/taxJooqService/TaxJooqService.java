@@ -1,7 +1,7 @@
 package az.topaz.backofficeservice.service.jooqService.taxJooqService;
 
 import az.topaz.backofficeservice.dto.request.TaxRequest;
-import nu.studer.sample.tables.records.TaxRecord;
+import nu.studer.sample.public_.tables.records.TaxRecord;
 
 import java.util.List;
 

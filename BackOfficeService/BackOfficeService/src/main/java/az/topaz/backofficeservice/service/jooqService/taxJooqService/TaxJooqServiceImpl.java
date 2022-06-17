@@ -4,7 +4,7 @@ import az.topaz.backofficeservice.dto.request.TaxRequest;
 import az.topaz.backofficeservice.mapper.recordMapper.TaxRecordMapper;
 import az.topaz.backofficeservice.repository.tax.TaxRepository;
 import lombok.RequiredArgsConstructor;
-import nu.studer.sample.tables.records.TaxRecord;
+import nu.studer.sample.public_.tables.records.TaxRecord;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

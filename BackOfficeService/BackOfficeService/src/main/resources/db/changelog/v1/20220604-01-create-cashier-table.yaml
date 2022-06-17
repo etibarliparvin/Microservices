@@ -5,6 +5,7 @@ databaseChangeLog:
       changes:
         - createTable:
             tableName: cashier
+            schemaName: public
             columns:
               - column:
                   name: id

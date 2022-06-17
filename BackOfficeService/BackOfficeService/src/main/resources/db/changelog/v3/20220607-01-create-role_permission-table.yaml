@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2022.06.07
+      author: etibarli
+      changes:
+        - createTable:
+            tableName: role_permission
+            schemaName: user_schema
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: role_permission_pk
+                    nullable: false
+              - column:
+                  name: role_id
+                  type: bigint
+              - column:
+                  name: permission_id
+                  type: bigint

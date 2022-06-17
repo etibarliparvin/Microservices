@@ -1,7 +1,7 @@
 package az.topaz.backofficeservice.mapper.recordMapper;
 
 import az.topaz.backofficeservice.dto.request.OperatorRequest;
-import nu.studer.sample.tables.records.OperatorRecord;
+import nu.studer.sample.public_.tables.records.OperatorRecord;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 

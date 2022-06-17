@@ -1,7 +1,7 @@
 package az.topaz.backofficeservice.mapper.recordMapper;
 
 import az.topaz.backofficeservice.dto.request.TaxRequest;
-import nu.studer.sample.tables.records.TaxRecord;
+import nu.studer.sample.public_.tables.records.TaxRecord;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

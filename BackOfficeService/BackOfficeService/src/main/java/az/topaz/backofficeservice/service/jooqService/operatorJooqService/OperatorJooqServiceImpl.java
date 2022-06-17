@@ -4,7 +4,7 @@ import az.topaz.backofficeservice.dto.request.OperatorRequest;
 import az.topaz.backofficeservice.mapper.recordMapper.OperatorRecordMapper;
 import az.topaz.backofficeservice.repository.operator.OperatorRepository;
 import lombok.RequiredArgsConstructor;
-import nu.studer.sample.tables.records.OperatorRecord;
+import nu.studer.sample.public_.tables.records.OperatorRecord;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

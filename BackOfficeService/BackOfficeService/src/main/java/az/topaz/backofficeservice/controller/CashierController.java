@@ -4,7 +4,7 @@ import az.topaz.backofficeservice.dto.request.CashierRequest;
 import az.topaz.backofficeservice.repository.cashier.CashierRepository;
 import az.topaz.backofficeservice.service.businessService.cashierBusinessService.CashierBusinessService;
 import lombok.RequiredArgsConstructor;
-import nu.studer.sample.tables.records.CashierRecord;
+import nu.studer.sample.public_.tables.records.CashierRecord;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

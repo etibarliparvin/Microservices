@@ -3,3 +3,7 @@ databaseChangeLog:
       path: v1
   - includeAll:
       path: v2
+  - includeAll:
+      path: v3
+  - includeAll:
+      path: v4

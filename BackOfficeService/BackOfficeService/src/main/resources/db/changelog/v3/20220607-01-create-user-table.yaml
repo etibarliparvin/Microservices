@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2022.06.07
+      author: etibarli
+      changes:
+        - createTable:
+            tableName: user
+            schemaName: user_schema
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: user_pk
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(250)
+              - column:
+                  name: last_name
+                  type: varchar(250)
+              - column:
+                  name: email
+                  type: varchar(250)
+              - column:
+                  name: username
+                  type: varchar(250)
+              - column:
+                  name: password
+                  type: varchar(250)
+              - column:
+                  name: status_id
+                  type: bigint
+              - column:
+                  name: created_date
+                  type: timestamp

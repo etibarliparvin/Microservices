@@ -5,6 +5,7 @@ databaseChangeLog:
       changes:
         - createTable:
             tableName: tax
+            schemaName: public
             columns:
               - column:
                   name: id

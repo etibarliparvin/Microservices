@@ -3,19 +3,16 @@ package az.topaz.backofficeservice.service.businessService.agentBusinessService;
 import az.topaz.backofficeservice.dto.common.CommonResponse;
 import az.topaz.backofficeservice.dto.request.AgentRequest;
 import az.topaz.backofficeservice.dto.response.AgentCashiersResponse;
-import az.topaz.backofficeservice.dto.response.AgentResponse;
 import az.topaz.backofficeservice.mapper.businessMapper.AgentResponseMapper;
 import az.topaz.backofficeservice.mapper.businessMapper.CashierResponseMapper;
 import az.topaz.backofficeservice.service.jooqService.agentJooqService.AgentJooqService;
 import lombok.RequiredArgsConstructor;
-import nu.studer.sample.tables.records.AgentRecord;
-import nu.studer.sample.tables.records.CashierRecord;
+import nu.studer.sample.public_.tables.records.AgentRecord;
+import nu.studer.sample.public_.tables.records.CashierRecord;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service

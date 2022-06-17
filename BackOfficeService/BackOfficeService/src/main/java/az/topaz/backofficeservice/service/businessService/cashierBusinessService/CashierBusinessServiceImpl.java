@@ -2,13 +2,10 @@ package az.topaz.backofficeservice.service.businessService.cashierBusinessServic
 
 import az.topaz.backofficeservice.dto.common.CommonResponse;
 import az.topaz.backofficeservice.dto.request.CashierRequest;
-import az.topaz.backofficeservice.dto.response.CashierResponse;
 import az.topaz.backofficeservice.mapper.businessMapper.CashierResponseMapper;
 import az.topaz.backofficeservice.service.jooqService.cashierJooqService.CashierJooqService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

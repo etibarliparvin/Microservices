@@ -4,8 +4,8 @@ import az.topaz.backofficeservice.dto.request.AgentRequest;
 import az.topaz.backofficeservice.mapper.recordMapper.AgentRecordMapper;
 import az.topaz.backofficeservice.repository.agent.AgentRepository;
 import lombok.RequiredArgsConstructor;
-import nu.studer.sample.tables.records.AgentRecord;
-import nu.studer.sample.tables.records.CashierRecord;
+import nu.studer.sample.public_.tables.records.AgentRecord;
+import nu.studer.sample.public_.tables.records.CashierRecord;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

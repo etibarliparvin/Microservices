@@ -1,14 +1,14 @@
 package az.topaz.backofficeservice.repository.operator;
 
 import lombok.RequiredArgsConstructor;
-import nu.studer.sample.tables.records.OperatorRecord;
+import nu.studer.sample.public_.tables.records.OperatorRecord;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-import static nu.studer.sample.tables.Cashier.CASHIER;
-import static nu.studer.sample.tables.Operator.OPERATOR;
+import static nu.studer.sample.public_.tables.Cashier.CASHIER;
+import static nu.studer.sample.public_.tables.Operator.OPERATOR;
 
 @Repository
 @RequiredArgsConstructor

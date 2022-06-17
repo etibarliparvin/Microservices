@@ -1,13 +1,13 @@
 package az.topaz.backofficeservice.repository.tax;
 
 import lombok.RequiredArgsConstructor;
-import nu.studer.sample.tables.records.TaxRecord;
+import nu.studer.sample.public_.tables.records.TaxRecord;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-import static nu.studer.sample.tables.Tax.TAX;
+import static nu.studer.sample.public_.tables.Tax.TAX;
 
 @Repository
 @RequiredArgsConstructor

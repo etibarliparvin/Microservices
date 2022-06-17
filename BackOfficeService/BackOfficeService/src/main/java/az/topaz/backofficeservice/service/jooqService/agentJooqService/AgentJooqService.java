@@ -1,8 +1,8 @@
 package az.topaz.backofficeservice.service.jooqService.agentJooqService;
 
 import az.topaz.backofficeservice.dto.request.AgentRequest;
-import nu.studer.sample.tables.records.AgentRecord;
-import nu.studer.sample.tables.records.CashierRecord;
+import nu.studer.sample.public_.tables.records.AgentRecord;
+import nu.studer.sample.public_.tables.records.CashierRecord;
 
 import java.util.List;
 import java.util.Map;

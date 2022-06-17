@@ -1,7 +1,7 @@
 package az.topaz.backofficeservice.service.jooqService.operatorJooqService;
 
 import az.topaz.backofficeservice.dto.request.OperatorRequest;
-import nu.studer.sample.tables.records.OperatorRecord;
+import nu.studer.sample.public_.tables.records.OperatorRecord;
 
 import java.util.List;
 

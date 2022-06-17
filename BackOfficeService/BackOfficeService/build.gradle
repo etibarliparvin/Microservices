@@ -36,8 +36,8 @@ plugins {
     id 'org.liquibase.gradle' version '2.0.4'
 }
 
-def changeLogPath= "$projectDir/src/main/resources/db/changelog/"
-def changeLogMasterFileName ='000.changelog-master.yaml'
+def changeLogPath = "$projectDir/src/main/resources/db/changelog/"
+def changeLogMasterFileName = '000.changelog-master.yaml'
 
 group = 'az.topaz'
 version = '0.0.1-SNAPSHOT'
@@ -176,7 +176,14 @@ jooq {
                     name = 'org.jooq.codegen.DefaultGenerator'
                     database {
                         name = 'org.jooq.meta.postgres.PostgresDatabase'
-                        inputSchema = 'public'
+                        schemata {
+                            schema {
+                                inputSchema = 'public'
+                            }
+                            schema {
+                                inputSchema = 'user_schema'
+                            }
+                        }
                         forcedTypes {
                             forcedType {
                                 name = 'varchar'

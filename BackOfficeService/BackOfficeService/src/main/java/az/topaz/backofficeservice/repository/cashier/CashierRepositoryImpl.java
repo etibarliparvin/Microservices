@@ -1,15 +1,15 @@
 package az.topaz.backofficeservice.repository.cashier;
 
 import lombok.RequiredArgsConstructor;
-import nu.studer.sample.tables.records.CashierRecord;
+import nu.studer.sample.public_.tables.records.CashierRecord;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-import static nu.studer.sample.tables.Agent.AGENT;
-import static nu.studer.sample.tables.Cashier.CASHIER;
+import static nu.studer.sample.public_.tables.Agent.AGENT;
+import static nu.studer.sample.public_.tables.Cashier.CASHIER;
 
 @Repository
 @RequiredArgsConstructor

@@ -2,14 +2,10 @@ package az.topaz.backofficeservice.service.businessService.operatorBusinessServi
 
 import az.topaz.backofficeservice.dto.common.CommonResponse;
 import az.topaz.backofficeservice.dto.request.OperatorRequest;
-import az.topaz.backofficeservice.dto.response.OperatorResponse;
 import az.topaz.backofficeservice.mapper.businessMapper.OperatorResponseMapper;
-import az.topaz.backofficeservice.mapper.recordMapper.OperatorRecordMapper;
 import az.topaz.backofficeservice.service.jooqService.operatorJooqService.OperatorJooqService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

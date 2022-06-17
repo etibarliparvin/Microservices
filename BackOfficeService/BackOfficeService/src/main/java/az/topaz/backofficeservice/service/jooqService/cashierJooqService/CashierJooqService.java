@@ -1,7 +1,7 @@
 package az.topaz.backofficeservice.service.jooqService.cashierJooqService;
 
 import az.topaz.backofficeservice.dto.request.CashierRequest;
-import nu.studer.sample.tables.records.CashierRecord;
+import nu.studer.sample.public_.tables.records.CashierRecord;
 
 import java.util.List;
 

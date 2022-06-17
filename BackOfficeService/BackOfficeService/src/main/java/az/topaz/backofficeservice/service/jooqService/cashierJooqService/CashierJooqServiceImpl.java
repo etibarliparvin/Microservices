@@ -4,14 +4,14 @@ import az.topaz.backofficeservice.dto.request.CashierRequest;
 import az.topaz.backofficeservice.mapper.recordMapper.CashierRecordMapper;
 import az.topaz.backofficeservice.repository.cashier.CashierRepository;
 import lombok.RequiredArgsConstructor;
-import nu.studer.sample.tables.records.CashierRecord;
+import nu.studer.sample.public_.tables.records.CashierRecord;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class CashierJooqServiceImpl implements CashierJooqService{
+public class CashierJooqServiceImpl implements CashierJooqService {
 
     private final CashierRecordMapper cashierRecordMapper;
     private final CashierRepository<CashierRecord> cashierRepository;

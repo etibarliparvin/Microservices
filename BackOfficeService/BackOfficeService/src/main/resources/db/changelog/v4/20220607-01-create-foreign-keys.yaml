@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2022.06.07
+      author: etibarli
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: role_id
+            baseTableName: role_permission
+            baseTableSchemaName:  user_schema
+            referencedTableSchemaName:  user_schema
+            constraintName: fk_role_permission_roles
+            referencedColumnNames: id
+            referencedTableName: roles
+        - addForeignKeyConstraint:
+            baseColumnNames: permission_id
+            baseTableName: role_permission
+            baseTableSchemaName:  user_schema
+            referencedTableSchemaName:  user_schema
+            constraintName: fk_role_permission_permission
+            referencedColumnNames: id
+            referencedTableName: permission
