@@ -1,18 +1,3 @@
-//buildscript {
-//    ext {
-//        protobufVersion = '3.14.0'
-//        protobufPluginVersion = '0.6.1'
-//        grpcVersion = '1.35.0'
-//        protobufGradlePluginVersion = '0.8.18'
-//    }
-//}
-//
-//buildscript {
-//    dependencies {
-//        classpath "com.google.protobuf:protobuf-gradle-plugin:${protobufGradlePluginVersion}"
-//    }
-//}
-
 plugins {
     id 'org.springframework.boot' version '2.7.0'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -22,9 +7,6 @@ plugins {
 
     id 'idea'
     id 'java-library'
-//    id 'com.google.protobuf' version "${protobufPluginVersion}"
-
-    id 'org.liquibase.gradle' version '2.0.4'
 }
 
 group = 'az.topaz'
@@ -40,22 +22,6 @@ configurations {
 repositories {
     mavenCentral()
 }
-
-//protobuf {
-//    protoc {
-//        artifact = "com.google.protobuf:protoc:3.19.2"
-//    }
-//    plugins {
-//        grpc {
-//            artifact = 'io.grpc:protoc-gen-grpc-java:1.45.1'
-//        }
-//    }
-//    generateProtoTasks {
-//        all()*.plugins {
-//            grpc {}
-//        }
-//    }
-//}
 
 sourceSets.main.java.srcDir new File(buildDir, 'generated/source')
 
@@ -76,53 +42,12 @@ dependencies {
     compileOnly 'jakarta.annotation:jakarta.annotation-api:1.3.5'
     compileOnly 'org.apache.tomcat:annotations-api:6.0.53' // necessary for Java 9+
 
-    implementation 'io.netty:netty-tcnative-boringssl-static:2.0.52.Final'
-    implementation 'net.devh:grpc-server-spring-boot-starter:2.12.0.RELEASE'
-//    implementation "io.grpc:grpc-netty:${grpcVersion}"
-//    implementation "io.grpc:grpc-protobuf:${grpcVersion}"
-//    implementation "io.grpc:grpc-stub:${grpcVersion}"
-
-    liquibaseRuntime 'org.liquibase:liquibase-core:4.2.2'
-
-    liquibaseRuntime 'ch.qos.logback:logback-core'
-    liquibaseRuntime 'ch.qos.logback:logback-classic'
-    liquibaseRuntime 'org.slf4j:slf4j-api'
-    liquibaseRuntime 'org.yaml:snakeyaml'
-
-    liquibaseRuntime 'org.postgresql:postgresql'
-
     implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2'
     runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.2'
     runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2'
-}
 
-//protobuf {
-//    protoc {
-//        artifact = "com.google.protobuf:protoc:${protobufVersion}"
-//    }
-//    generatedFilesBaseDir = "$projectDir/src/generated"
-//    clean {
-//        delete generatedFilesBaseDir
-//    }
-//    plugins {
-//        grpc {
-//            artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
-//        }
-//    }
-//    generateProtoTasks {
-//        all()*.plugins {
-//            grpc {}
-//        }
-//    }
-//}
-
-idea {
-    module {
-        sourceDirs += file("src/generated/main/java")
-        sourceDirs += file("src/generated/main/grpc")
-        generatedSourceDirs += file("src/generated/main/java")
-        generatedSourceDirs += file("src/generated/main/grpc")
-    }
+    // https://mvnrepository.com/artifact/com.google.guava/guava
+    implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
 }
 
 jooq {
@@ -189,5 +114,5 @@ jooq {
 }
 
 tasks.named('test') {
-//    useJUnitPlatform()
+    useJUnitPlatform()
 }

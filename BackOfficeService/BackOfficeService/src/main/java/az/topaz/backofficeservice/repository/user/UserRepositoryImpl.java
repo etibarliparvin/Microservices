@@ -11,7 +11,7 @@ import static nu.studer.sample.user_schema.tables.User.USER;
 
 @Repository
 @RequiredArgsConstructor
-public class UserRepositoryImpl implements UserRepository<UserRecord> {
+public class    UserRepositoryImpl implements UserRepository<UserRecord> {
 
     private final DSLContext context;
 
